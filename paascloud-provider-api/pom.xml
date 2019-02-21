@@ -15,11 +15,6 @@
 
   <modules>
     <module>paascloud-provider-uac-api</module>
-    <module>paascloud-provider-mdc-api</module>
-    <module>paascloud-provider-omc-api</module>
-    <module>paascloud-provider-opc-api</module>
-    <module>paascloud-provider-tpc-api</module>
-    <module>paascloud-provider-sdk-api</module>
   </modules>
 
   <dependencies>

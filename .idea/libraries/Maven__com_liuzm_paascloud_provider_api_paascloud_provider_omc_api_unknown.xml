@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.liuzm.paascloud.provider.api:paascloud-provider-omc-api:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/provider/api/paascloud-provider-omc-api/unknown/paascloud-provider-omc-api-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/provider/api/paascloud-provider-omc-api/unknown/paascloud-provider-omc-api-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/provider/api/paascloud-provider-omc-api/unknown/paascloud-provider-omc-api-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

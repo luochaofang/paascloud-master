@@ -7,7 +7,12 @@ spring:
         - VM.*
       preferredNetworks:
         - 192.168
-
+security:
+  basic:
+    enabled: true
+  user:
+    name: admin
+    password: 123456
 eureka:
   server:
     enable-self-preservation: false
@@ -17,4 +22,5 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+          defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:7880/eureka/
+

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.liuzm.paascloud.common:paascloud-common-zk:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/common/paascloud-common-zk/unknown/paascloud-common-zk-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/common/paascloud-common-zk/unknown/paascloud-common-zk-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/liuzm/paascloud/common/paascloud-common-zk/unknown/paascloud-common-zk-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

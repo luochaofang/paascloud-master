@@ -23,4 +23,17 @@
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>corporate-lib-rep</id>
+            <url>http://nexus.foudre.cn/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>User Project Snapshot</name>
+            <url>http://nexus.foudre.cn/repository/maven-snapshots/</url>
+            <uniqueVersion>true</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

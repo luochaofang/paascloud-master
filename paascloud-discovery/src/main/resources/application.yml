@@ -1,27 +1,45 @@
 server:
-  port: 8080
+  port: 7881
 
 spring:
   profiles:
     active: dev
   application:
-    name: @pom.artifactId@
-  rabbitmq:
-    host: paascloud-mq-rabbit
-    port: 5672
-    username: guest
-    password: guest
+    name: stdConfigServer  #@pom.artifactId@
+# git倉庫
+  cloud:
+      config:
+        server:
+          git:
+            uri: https://github.com/luochaofang/credit-config.git
+            username: luochaofang
+            password: luochaofang888888
+            default-label: ${spring.profiles.active}
+
+#    cloud:
+#      config:
+#        server:
+#          native:
+#            search-locations: file:/home/repo
   boot:
     admin:
-      username: admin
-      password: admin
+      username: ${security.user.name}
+      password: ${security.user.password}
 
-security:
+info:
+  owner: Qiyexi@welinkdata.com
+  version: 1.0
+  关于我们: http://www.welinkdata.com
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:123456@localhost:7880/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+security: # 配置中心的用户名密码
+  basic:
+    enabled: true
   user:
     name: admin
     password: admin
-
-info:
-  软件著作权: paascloud快速搭建企业级分布式微服务平台
-  著作登记号: 2018SR320076
-  关于我们: http://paascloud.net
