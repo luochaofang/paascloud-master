@@ -35,14 +35,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-util</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.liuzm.paascloud.common</groupId>
-            <artifactId>paascloud-common-core</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.liuzm.paascloud.common</groupId>-->
+            <!--<artifactId>paascloud-common-util</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.liuzm.paascloud.common</groupId>-->
+            <!--<artifactId>paascloud-common-core</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
@@ -66,6 +66,11 @@
             <groupId>com.didispace</groupId>
             <artifactId>swagger-butler-core</artifactId>
             <version>1.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.10</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

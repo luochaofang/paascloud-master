@@ -19,10 +19,9 @@
     <module>paascloud-monitor</module>
     <module>paascloud-zipkin</module>
     <module>paascloud-gateway</module>
-    <module>paascloud-provider-api</module>
     <module>paascloud-common</module>
     <module>paascloud-provider</module>
-    <module>paascloud-generator</module>
+    <module>paascloud-provider-api</module>
   </modules>
 
   <developers>
@@ -107,31 +106,6 @@
         <version>${guava.version}</version>
       </dependency>
       <!-- paas cloud start -->
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-common-base</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-common-core</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-common-util</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-common-zk</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.common</groupId>
-        <artifactId>paascloud-security-app</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
       <!-- paas cloud end -->
       <!-- swagger cloud start -->
       <dependency>
@@ -149,7 +123,7 @@
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
-        <version>1.16.14</version>
+        <version>1.16.10</version>
       </dependency>
       <dependency>
         <groupId>commons-codec</groupId>
@@ -256,36 +230,8 @@
         <artifactId>hutool-all</artifactId>
         <version>3.0.7</version>
       </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-uac-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-mdc-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-omc-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-tpc-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-opc-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.liuzm.paascloud.provider.api</groupId>
-        <artifactId>paascloud-provider-sdk-api</artifactId>
-        <version>${paascloud.version}</version>
-      </dependency>
+
+
       <dependency>
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis</artifactId>
@@ -388,11 +334,6 @@
         </exclusions>
       </dependency>
 
-      <dependency>
-        <groupId>com.liuzm.paascloud</groupId>
-        <artifactId>elastic-job-lite-starter</artifactId>
-        <version>1.0</version>
-      </dependency>
       <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>

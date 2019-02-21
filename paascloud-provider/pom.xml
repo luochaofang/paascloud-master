@@ -20,10 +20,6 @@
 
     <modules>
         <module>paascloud-provider-uac</module>
-        <module>paascloud-provider-mdc</module>
-        <module>paascloud-provider-omc</module>
-        <module>paascloud-provider-opc</module>
-        <module>paascloud-provider-tpc</module>
     </modules>
 
     <dependencies>

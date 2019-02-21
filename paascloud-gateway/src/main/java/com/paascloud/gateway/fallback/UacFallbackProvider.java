@@ -71,7 +71,7 @@ public class UacFallbackProvider implements FallbackProvider {
 
 			@Override
 			public void close() {
-				log.info("close");
+				//log.info("close");
 			}
 
 			@Override

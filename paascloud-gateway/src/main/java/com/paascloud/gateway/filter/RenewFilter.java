@@ -13,8 +13,6 @@ package com.paascloud.gateway.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import com.paascloud.base.enums.ErrorCodeEnum;
-import com.paascloud.base.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.http.HttpHeaders;
@@ -76,13 +74,13 @@ public class RenewFilter extends ZuulFilter {
 	 */
 	@Override
 	public Object run() {
-		log.info("RenewFilter - token续租...");
+		//log.info("RenewFilter - token续租...");
 		RequestContext requestContext = RequestContext.getCurrentContext();
 		try {
 			doSomething(requestContext);
 		} catch (Exception e) {
-			log.error("RenewFilter - token续租. [FAIL] EXCEPTION={}", e.getMessage(), e);
-			throw new BusinessException(ErrorCodeEnum.UAC10011041);
+			//log.error("RenewFilter - token续租. [FAIL] EXCEPTION={}", e.getMessage(), e);
+			//throw new BusinessException(ErrorCodeEnum.UAC10011041);
 		}
 		return null;
 	}
