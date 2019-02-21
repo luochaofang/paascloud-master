@@ -1,7 +1,7 @@
 package com.paascloud.provider.service.impl;
 
 import com.google.common.base.Joiner;
-import com.paascloud.base.constant.GlobalConstant;
+//import com.paascloud.base.constant.GlobalConstant;
 import com.paascloud.provider.security.SecurityUtils;
 import com.paascloud.provider.service.UacPermissionService;
 import lombok.extern.slf4j.Slf4j;
@@ -35,11 +35,11 @@ public class UacPermissionServiceImpl implements UacPermissionService {
 		String currentLoginName = SecurityUtils.getCurrentLoginName();
 		Set<String> currentAuthorityUrl = SecurityUtils.getCurrentAuthorityUrl();
 		String requestURI = request.getRequestURI();
-		log.info("验证权限loginName={}, requestURI={}, hasAuthorityUrl={}", currentLoginName, requestURI, Joiner.on(GlobalConstant.Symbol.COMMA).join(currentAuthorityUrl));
+		//log.info("验证权限loginName={}, requestURI={}, hasAuthorityUrl={}", currentLoginName, requestURI, Joiner.on(GlobalConstant.Symbol.COMMA).join(currentAuthorityUrl));
 		// 超级管理员 全部都可以访问
-		if (StringUtils.equals(currentLoginName, GlobalConstant.Sys.SUPER_MANAGER_LOGIN_NAME)) {
-			return true;
-		}
+//		if (StringUtils.equals(currentLoginName, GlobalConstant.Sys.SUPER_MANAGER_LOGIN_NAME)) {
+//			return true;
+//		}
 
 		// DEMO项目Feign客户端具有所有权限, 如果需要则在角色权限中控制
 		if (currentLoginName.contains(OAUTH2_CLIENT_PREFIX)) {

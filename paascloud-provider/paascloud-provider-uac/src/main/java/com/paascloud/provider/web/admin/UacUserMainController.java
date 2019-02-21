@@ -13,8 +13,6 @@ package com.paascloud.provider.web.admin;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.paascloud.base.dto.LoginAuthDto;
-import com.paascloud.base.enums.ErrorCodeEnum;
 import com.paascloud.core.annotation.LogAnnotation;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.domain.UacLog;
@@ -27,7 +25,6 @@ import com.paascloud.provider.model.exceptions.UacBizException;
 import com.paascloud.provider.model.vo.UserBindRoleVo;
 import com.paascloud.provider.security.SecurityUtils;
 import com.paascloud.provider.service.UacUserService;
-import com.paascloud.security.core.SecurityUser;
 import com.paascloud.wrapper.WrapMapper;
 import com.paascloud.wrapper.Wrapper;
 import io.swagger.annotations.Api;
@@ -80,8 +77,8 @@ public class UacUserMainController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "新增用户")
 	public Wrapper<Integer> addUacUser(@ApiParam(name = "user", value = "新增用户Dto") @RequestBody UacUser user) {
 		logger.info(" 新增用户 user={}", user);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		uacUserService.saveUacUser(user, loginAuthDto);
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//uacUserService.saveUacUser(user, loginAuthDto);
 		return WrapMapper.ok();
 	}
 
@@ -115,13 +112,14 @@ public class UacUserMainController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "根据Id修改用户状态")
 	public Wrapper<Integer> modifyUserStatusById(@ApiParam(name = "modifyUserStatusDto", value = "用户禁用/启用Dto") @RequestBody ModifyUserStatusDto modifyUserStatusDto) {
 		logger.info(" 根据Id修改用户状态 modifyUserStatusDto={}", modifyUserStatusDto);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
 		UacUser uacUser = new UacUser();
 		uacUser.setId(modifyUserStatusDto.getUserId());
 		uacUser.setStatus(modifyUserStatusDto.getStatus());
 
-		int result = uacUserService.modifyUserStatusById(uacUser, loginAuthDto);
-		return handleResult(result);
+		//int result = uacUserService.modifyUserStatusById(uacUser, loginAuthDto);
+		//return handleResult(result);
+		return null;
 	}
 
 	/**
@@ -151,11 +149,11 @@ public class UacUserMainController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "获取用户绑定角色页面数据")
 	public Wrapper<UserBindRoleVo> getBindRole(@ApiParam(name = "userId", value = "角色id") @PathVariable Long userId) {
 		logger.info("获取用户绑定角色页面数据. userId={}", userId);
-		LoginAuthDto loginAuthDto = super.getLoginAuthDto();
-		Long currentUserId = loginAuthDto.getUserId();
-		if (Objects.equals(userId, currentUserId)) {
-			throw new UacBizException(ErrorCodeEnum.UAC10011023);
-		}
+		//LoginAuthDto loginAuthDto = super.getLoginAuthDto();
+		//Long currentUserId = loginAuthDto.getUserId();
+//		if (Objects.equals(userId, currentUserId)) {
+//			throw new UacBizException(ErrorCodeEnum.UAC10011023);
+//		}
 
 		UserBindRoleVo bindUserDto = uacUserService.getUserBindRoleDto(userId);
 		return WrapMapper.ok(bindUserDto);
@@ -173,8 +171,8 @@ public class UacUserMainController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "用户绑定角色")
 	public Wrapper<Integer> bindUserRoles(@ApiParam(name = "bindUserRolesDto", value = "用户绑定角色Dto") @RequestBody BindUserRolesDto bindUserRolesDto) {
 		logger.info("用户绑定角色 bindUserRolesDto={}", bindUserRolesDto);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		uacUserService.bindUserRoles(bindUserRolesDto, loginAuthDto);
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//uacUserService.bindUserRoles(bindUserRolesDto, loginAuthDto);
 		return WrapMapper.ok();
 	}
 
@@ -188,9 +186,10 @@ public class UacUserMainController extends BaseController {
 	public Wrapper<List<UserMenuDto>> queryUserMenuDtoData() {
 		logger.info("查询用户常用功能数据");
 
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		List<UserMenuDto> userMenuDtoList = uacUserService.queryUserMenuDtoData(loginAuthDto);
-		return WrapMapper.ok(userMenuDtoList);
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//List<UserMenuDto> userMenuDtoList = uacUserService.queryUserMenuDtoData(loginAuthDto);
+		//return WrapMapper.ok(userMenuDtoList);
+		return null;
 	}
 
 	/**
@@ -208,9 +207,10 @@ public class UacUserMainController extends BaseController {
 		List<Long> menuIdList = bindUserMenusDto.getMenuIdList();
 		logger.info("menuIdList = {}", menuIdList);
 
-		int result = uacUserService.bindUserMenus(menuIdList, getLoginAuthDto());
+		//int result = uacUserService.bindUserMenus(menuIdList, getLoginAuthDto());
 
-		return handleResult(result);
+		//return handleResult(result);
+		return null;
 
 	}
 
@@ -242,7 +242,7 @@ public class UacUserMainController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "根据用户Id重置密码")
 	public Wrapper<UacUser> resetLoginPwd(@ApiParam(name = "userId", value = "用户ID") @PathVariable Long userId) {
 		logger.info("resetLoginPwd - 根据用户Id重置密码. userId={}", userId);
-		uacUserService.resetLoginPwd(userId, getLoginAuthDto());
+		//uacUserService.resetLoginPwd(userId, getLoginAuthDto());
 		return WrapMapper.ok();
 	}
 
@@ -251,12 +251,12 @@ public class UacUserMainController extends BaseController {
 	 *
 	 * @return the security user
 	 */
-	@GetMapping("/user")
-	public SecurityUser user() {
-		String loginName = SecurityUtils.getCurrentLoginName();
-		logger.info("{}", loginName);
-		UacUser user = uacUserService.findByLoginName(loginName);
-		return user == null ? null : new SecurityUser(user.getId(), user.getLoginName(), user.getLoginPwd(), user.getUserName(), user.getGroupId(), user.getGroupName());
-	}
+//	@GetMapping("/user")
+//	public SecurityUser user() {
+//		String loginName = SecurityUtils.getCurrentLoginName();
+//		logger.info("{}", loginName);
+//		UacUser user = uacUserService.findByLoginName(loginName);
+//		return user == null ? null : new SecurityUser(user.getId(), user.getLoginName(), user.getLoginPwd(), user.getUserName(), user.getGroupId(), user.getGroupName());
+//	}
 
 }

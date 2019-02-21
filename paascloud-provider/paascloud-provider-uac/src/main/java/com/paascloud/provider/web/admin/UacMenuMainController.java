@@ -12,7 +12,6 @@
 package com.paascloud.provider.web.admin;
 
 import com.google.common.base.Preconditions;
-import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.annotation.LogAnnotation;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.domain.UacMenu;
@@ -85,9 +84,10 @@ public class UacMenuMainController extends BaseController {
 	@LogAnnotation
 	public Wrapper updateUacMenuStatusById(@ApiParam(name = "uacMenuStatusDto", value = "修改菜单状态Dto") @RequestBody UacMenuStatusDto uacMenuStatusDto) {
 		logger.info("根据id修改菜单的禁用状态 uacMenuStatusDto={}", uacMenuStatusDto);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		uacMenuService.updateUacMenuStatusById(uacMenuStatusDto, loginAuthDto);
-		return WrapMapper.ok();
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//uacMenuService.updateUacMenuStatusById(uacMenuStatusDto, loginAuthDto);
+		//return WrapMapper.ok();
+		return null;
 	}
 
 	/**
@@ -102,9 +102,9 @@ public class UacMenuMainController extends BaseController {
 	@LogAnnotation
 	public Wrapper saveMenu(@ApiParam(name = "saveMenu", value = "保存菜单") @RequestBody UacEditMenuDto uacMenuAddDto) {
 		UacMenu uacMenu = new UacMenu();
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
 		BeanUtils.copyProperties(uacMenuAddDto, uacMenu);
-		uacMenuService.saveUacMenu(uacMenu, loginAuthDto);
+		//uacMenuService.saveUacMenu(uacMenu, loginAuthDto);
 		return WrapMapper.ok();
 	}
 
@@ -120,7 +120,7 @@ public class UacMenuMainController extends BaseController {
 	@LogAnnotation
 	public Wrapper<Integer> deleteUacMenuById(@ApiParam(name = "id", value = "菜单id") @PathVariable Long id) {
 		logger.info(" 根据id删除菜单 id={}", id);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
 
 		Preconditions.checkArgument(id != null, "菜单ID不能为空");
 
@@ -130,7 +130,8 @@ public class UacMenuMainController extends BaseController {
 			return WrapMapper.wrap(Wrapper.ERROR_CODE, "此菜单含有子菜单, 请先删除子菜单");
 		}
 
-		int result = uacMenuService.deleteUacMenuById(id, loginAuthDto);
-		return super.handleResult(result);
+		//int result = uacMenuService.deleteUacMenuById(id, loginAuthDto);
+		//return super.handleResult(result);
+		return null;
 	}
 }

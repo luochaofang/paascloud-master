@@ -13,8 +13,8 @@ package com.paascloud.provider.service.impl;
 
 import com.google.common.base.Preconditions;
 import com.paascloud.PublicUtil;
-import com.paascloud.base.dto.LoginAuthDto;
-import com.paascloud.base.enums.ErrorCodeEnum;
+//import com.paascloud.base.dto.LoginAuthDto;
+//import com.paascloud.base.enums.ErrorCodeEnum;
 import com.paascloud.provider.model.constant.UacConstant;
 import com.paascloud.provider.model.domain.UacUser;
 import com.paascloud.provider.model.dto.user.LoginRespDto;
@@ -60,26 +60,26 @@ public class UacLoginServiceImpl implements UacLoginService {
 		UacUser uacUser = uacUserService.findByLoginName(loginName);
 		if (PublicUtil.isEmpty(uacUser)) {
 			log.info("找不到用户信息 loginName={}", loginName);
-			throw new UacBizException(ErrorCodeEnum.UAC10011002, loginName);
+			//throw new UacBizException(ErrorCodeEnum.UAC10011002, loginName);
 		}
 
-		LoginAuthDto loginAuthDto = this.getLoginAuthDto(uacUser);
+		//LoginAuthDto loginAuthDto = this.getLoginAuthDto(uacUser);
 		List<MenuVo> menuVoList = uacMenuService.getMenuVoList(uacUser.getId(), applicationId);
 		if (PublicUtil.isNotEmpty(menuVoList) && UacConstant.MENU_ROOT.equals(menuVoList.get(0).getMenuCode())) {
 			menuVoList = menuVoList.get(0).getSubMenu();
 		}
-		loginRespDto.setLoginAuthDto(loginAuthDto);
+		//loginRespDto.setLoginAuthDto(loginAuthDto);
 		loginRespDto.setMenuList(menuVoList);
 		return loginRespDto;
 	}
 
-	private LoginAuthDto getLoginAuthDto(UacUser uacUser) {
-		LoginAuthDto loginAuthDto = new LoginAuthDto();
-		loginAuthDto.setUserId(uacUser.getId());
-		loginAuthDto.setUserName(uacUser.getUserName());
-		loginAuthDto.setLoginName(uacUser.getLoginName());
-		return loginAuthDto;
-	}
+//	private LoginAuthDto getLoginAuthDto(UacUser uacUser) {
+//		LoginAuthDto loginAuthDto = new LoginAuthDto();
+//		loginAuthDto.setUserId(uacUser.getId());
+//		loginAuthDto.setUserName(uacUser.getUserName());
+//		loginAuthDto.setLoginName(uacUser.getLoginName());
+//		return loginAuthDto;
+//	}
 
 
 }

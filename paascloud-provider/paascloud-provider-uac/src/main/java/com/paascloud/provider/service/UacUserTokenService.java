@@ -13,8 +13,8 @@ package com.paascloud.provider.service;
 
 import com.arronlong.httpclientutil.exception.HttpProcessException;
 import com.github.pagehelper.PageInfo;
-import com.paascloud.base.dto.LoginAuthDto;
-import com.paascloud.base.dto.UserTokenDto;
+//import com.paascloud.base.dto.LoginAuthDto;
+//import com.paascloud.base.dto.UserTokenDto;
 import com.paascloud.core.support.IService;
 import com.paascloud.provider.model.domain.UacUserToken;
 import com.paascloud.provider.model.dto.token.TokenMainQueryDto;
@@ -35,7 +35,7 @@ public interface UacUserTokenService extends IService<UacUserToken> {
 	 * @param loginAuthDto the login auth dto
 	 * @param request      the request
 	 */
-	void saveUserToken(String accessToken, String refreshToken, LoginAuthDto loginAuthDto, HttpServletRequest request);
+	//void saveUserToken(String accessToken, String refreshToken, LoginAuthDto loginAuthDto, HttpServletRequest request);
 
 	/**
 	 * 获取token.
@@ -44,7 +44,7 @@ public interface UacUserTokenService extends IService<UacUserToken> {
 	 *
 	 * @return the by access token
 	 */
-	UserTokenDto getByAccessToken(String accessToken);
+	//UserTokenDto getByAccessToken(String accessToken);
 
 
 	/**
@@ -53,7 +53,7 @@ public interface UacUserTokenService extends IService<UacUserToken> {
 	 * @param tokenDto     the token dto
 	 * @param loginAuthDto the login auth dto
 	 */
-	void updateUacUserToken(UserTokenDto tokenDto, LoginAuthDto loginAuthDto);
+	//void updateUacUserToken(UserTokenDto tokenDto, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 分页查询token列表.

@@ -12,7 +12,6 @@
 package com.paascloud.provider.web.admin;
 
 import com.paascloud.PublicUtil;
-import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.annotation.LogAnnotation;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.domain.UacRole;
@@ -220,8 +219,8 @@ public class UacUserCommonController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "修改用户信息")
 	public Wrapper<Integer> modifyUserEmail(@PathVariable String email, @PathVariable String emailCode) {
 		logger.info(" 修改用户信息 email={}, emailCode={}", email, emailCode);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		uacUserService.modifyUserEmail(email, emailCode, loginAuthDto);
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//uacUserService.modifyUserEmail(email, emailCode, loginAuthDto);
 		return WrapMapper.ok();
 	}
 

@@ -108,10 +108,7 @@
     <dependency>
       <groupId>com.liuzm.paascloud.common</groupId>
       <artifactId>paascloud-common-base</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.liuzm.paascloud.common</groupId>
-      <artifactId>paascloud-security-app</artifactId>
+      <version>1.0</version>
     </dependency>
   </dependencies>
 </project>

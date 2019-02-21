@@ -12,7 +12,6 @@
 package com.paascloud.provider.web.admin;
 
 
-import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.annotation.LogAnnotation;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.dto.user.UserModifyPwdDto;
@@ -61,10 +60,11 @@ public class UacUserPasswordController extends BaseController {
 		logger.info("新密码 newPassword = {}", userModifyPwdDto.getNewPassword());
 		logger.info("登录名 loginName = {}", userModifyPwdDto.getLoginName());
 
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
 
-		int result = uacUserService.userModifyPwd(userModifyPwdDto, loginAuthDto);
-		return handleResult(result);
+		//int result = uacUserService.userModifyPwd(userModifyPwdDto, loginAuthDto);
+		//return handleResult(result);
+		return null;
 	}
 
 

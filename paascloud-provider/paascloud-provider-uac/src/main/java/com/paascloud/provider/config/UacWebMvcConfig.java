@@ -14,7 +14,7 @@ package com.paascloud.provider.config;
 import com.paascloud.core.config.PcObjectMapper;
 import com.paascloud.core.config.SwaggerConfiguration;
 import com.paascloud.core.interceptor.TokenInterceptor;
-import com.paascloud.security.core.properties.SecurityConstants;
+//import com.paascloud.security.core.properties.SecurityConstants;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -48,9 +48,9 @@ public class UacWebMvcConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		super.addInterceptors(registry);
-		registry.addInterceptor(vueViewInterceptor)
-				.addPathPatterns("/**")
-				.excludePathPatterns("/swagger-resources/**", "*.js", "/**/*.js", "*.css", "/**/*.css", "*.html", "/**/*.html", SecurityConstants.DEFAULT_SOCIAL_USER_INFO_URL);
+//		registry.addInterceptor(vueViewInterceptor)
+//				.addPathPatterns("/**")
+//				.excludePathPatterns("/swagger-resources/**", "*.js", "/**/*.js", "*.css", "/**/*.css", "*.html", "/**/*.html", SecurityConstants.DEFAULT_SOCIAL_USER_INFO_URL);
 	}
 
 	@Override

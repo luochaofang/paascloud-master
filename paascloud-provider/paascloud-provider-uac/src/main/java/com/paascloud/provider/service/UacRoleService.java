@@ -11,7 +11,7 @@
 
 package com.paascloud.provider.service;
 
-import com.paascloud.base.dto.LoginAuthDto;
+//import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.provider.model.domain.UacRole;
 import com.paascloud.provider.model.dto.role.RoleBindActionDto;
 import com.paascloud.provider.model.dto.role.RoleBindMenuDto;
@@ -67,7 +67,7 @@ public interface UacRoleService extends IService<UacRole> {
 	 *
 	 * @return the int
 	 */
-	int saveRole(UacRole role, LoginAuthDto loginAuthDto);
+	//int saveRole(UacRole role, LoginAuthDto loginAuthDto);
 
 	/**
 	 * Gets auth tree no check menu.
@@ -110,7 +110,7 @@ public interface UacRoleService extends IService<UacRole> {
 	 * @param roleBindUserReqDto the role bind user req dto
 	 * @param loginAuthDto       the login auth dto
 	 */
-	void bindUser4Role(RoleBindUserReqDto roleBindUserReqDto, LoginAuthDto loginAuthDto);
+	//void bindUser4Role(RoleBindUserReqDto roleBindUserReqDto, LoginAuthDto loginAuthDto);
 
 	/**
 	 * Find all role info by user id list.

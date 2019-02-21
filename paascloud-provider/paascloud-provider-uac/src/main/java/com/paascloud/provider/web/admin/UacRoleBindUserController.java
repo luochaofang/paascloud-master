@@ -11,7 +11,7 @@
 
 package com.paascloud.provider.web.admin;
 
-import com.paascloud.base.dto.LoginAuthDto;
+//import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.annotation.LogAnnotation;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.provider.model.dto.role.RoleBindUserDto;
@@ -52,8 +52,8 @@ public class UacRoleBindUserController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "角色绑定用户")
 	public Wrapper bindUser(@ApiParam(name = "uacRoleBindUserReqDto", value = "角色绑定用户") @RequestBody RoleBindUserReqDto roleBindUserReqDto) {
 		logger.info("roleBindUser={}", roleBindUserReqDto);
-		LoginAuthDto loginAuthDto = getLoginAuthDto();
-		uacRoleService.bindUser4Role(roleBindUserReqDto, loginAuthDto);
+		//LoginAuthDto loginAuthDto = getLoginAuthDto();
+		//uacRoleService.bindUser4Role(roleBindUserReqDto, loginAuthDto);
 		return WrapMapper.ok();
 	}
 
@@ -68,9 +68,10 @@ public class UacRoleBindUserController extends BaseController {
 	@ApiOperation(httpMethod = "POST", value = "获取角色绑定用户页面数据")
 	public Wrapper<RoleBindUserDto> getBindUser(@ApiParam(name = "roleId", value = "角色id") @PathVariable Long roleId) {
 		logger.info("获取角色绑定用户页面数据. roleId={}", roleId);
-		LoginAuthDto loginAuthDto = super.getLoginAuthDto();
-		Long currentUserId = loginAuthDto.getUserId();
-		RoleBindUserDto bindUserDto = uacRoleService.getRoleBindUserDto(roleId, currentUserId);
-		return WrapMapper.ok(bindUserDto);
+		//LoginAuthDto loginAuthDto = super.getLoginAuthDto();
+		//Long currentUserId = loginAuthDto.getUserId();
+		//RoleBindUserDto bindUserDto = uacRoleService.getRoleBindUserDto(roleId, currentUserId);
+		//return WrapMapper.ok(bindUserDto);
+		return null;
 	}
 }

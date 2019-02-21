@@ -3,7 +3,7 @@ package com.paascloud.provider.security;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.paascloud.core.utils.RequestUtil;
 import com.paascloud.provider.service.UacUserService;
-import com.paascloud.security.core.SecurityUser;
+//import com.paascloud.security.core.SecurityUser;
 import com.paascloud.wrapper.WrapMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.MapUtils;
@@ -77,10 +77,10 @@ public class PcAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
 		OAuth2Authentication oAuth2Authentication = new OAuth2Authentication(oAuth2Request, authentication);
 
 		OAuth2AccessToken token = authorizationServerTokenServices.createAccessToken(oAuth2Authentication);
-		SecurityUser principal = (SecurityUser) authentication.getPrincipal();
-		uacUserService.handlerLoginData(token, principal, request);
+		//SecurityUser principal = (SecurityUser) authentication.getPrincipal();
+		//uacUserService.handlerLoginData(token, principal, request);
 
-		log.info("用户【 {} 】记录登录日志", principal.getUsername());
+		//log.info("用户【 {} 】记录登录日志", principal.getUsername());
 
 		response.setContentType("application/json;charset=UTF-8");
 		response.getWriter().write((objectMapper.writeValueAsString(WrapMapper.ok(token))));

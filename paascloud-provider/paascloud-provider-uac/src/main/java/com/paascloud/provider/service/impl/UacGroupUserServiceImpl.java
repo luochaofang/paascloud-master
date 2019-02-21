@@ -4,7 +4,6 @@ import com.paascloud.core.support.BaseService;
 import com.paascloud.provider.mapper.UacGroupUserMapper;
 import com.paascloud.provider.model.domain.UacGroup;
 import com.paascloud.provider.model.domain.UacGroupUser;
-import com.paascloud.provider.service.UacGroupUserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

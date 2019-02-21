@@ -12,7 +12,6 @@
 package com.paascloud.provider.web.admin;
 
 import com.google.common.base.Preconditions;
-import com.paascloud.base.dto.UserTokenDto;
 import com.paascloud.core.support.BaseController;
 import com.paascloud.core.utils.RequestUtil;
 import com.paascloud.provider.model.dto.user.LoginRespDto;
@@ -81,9 +80,9 @@ public class UacUserLoginController extends BaseController {
 	public Wrapper loginAfter(String accessToken) {
 		if (!StringUtils.isEmpty(accessToken)) {
 			// 修改用户在线状态
-			UserTokenDto userTokenDto = uacUserTokenService.getByAccessToken(accessToken);
-			userTokenDto.setStatus(UacUserTokenStatusEnum.OFF_LINE.getStatus());
-			uacUserTokenService.updateUacUserToken(userTokenDto, getLoginAuthDto());
+			//UserTokenDto userTokenDto = uacUserTokenService.getByAccessToken(accessToken);
+			//userTokenDto.setStatus(UacUserTokenStatusEnum.OFF_LINE.getStatus());
+			//uacUserTokenService.updateUacUserToken(userTokenDto, getLoginAuthDto());
 		}
 		return WrapMapper.ok();
 	}

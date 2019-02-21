@@ -30,8 +30,8 @@ import java.util.List;
 @EnableAuthorizationServer
 public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	@Autowired
-	private TokenStore tokenStore;
+//	@Autowired
+//	private TokenStore tokenStore;
 	@Autowired
 	private AuthenticationManager authenticationManager;
 	@Resource
@@ -76,21 +76,21 @@ public class PcAuthorizationServerConfig extends AuthorizationServerConfigurerAd
 	 *
 	 * @throws Exception the exception
 	 */
-	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		endpoints.tokenStore(tokenStore)
-				.authenticationManager(authenticationManager)
-				.userDetailsService(userDetailsService);
-
-		if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
-			TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
-			List<TokenEnhancer> enhancers = new ArrayList<>();
-			enhancers.add(jwtTokenEnhancer);
-			enhancers.add(jwtAccessTokenConverter);
-			enhancerChain.setTokenEnhancers(enhancers);
-			endpoints.tokenEnhancer(enhancerChain).accessTokenConverter(jwtAccessTokenConverter);
-		}
-	}
+//	@Override
+//	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+//		endpoints.tokenStore(tokenStore)
+//				.authenticationManager(authenticationManager)
+//				.userDetailsService(userDetailsService);
+//
+//		if (jwtAccessTokenConverter != null && jwtTokenEnhancer != null) {
+//			TokenEnhancerChain enhancerChain = new TokenEnhancerChain();
+//			List<TokenEnhancer> enhancers = new ArrayList<>();
+//			enhancers.add(jwtTokenEnhancer);
+//			enhancers.add(jwtAccessTokenConverter);
+//			enhancerChain.setTokenEnhancers(enhancers);
+//			endpoints.tokenEnhancer(enhancerChain).accessTokenConverter(jwtAccessTokenConverter);
+//		}
+//	}
 
 	/**
 	 * 退出时的处理策略配置

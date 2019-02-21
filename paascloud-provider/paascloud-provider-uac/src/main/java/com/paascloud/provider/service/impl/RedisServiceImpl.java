@@ -1,7 +1,6 @@
 package com.paascloud.provider.service.impl;
 
 import com.google.common.base.Preconditions;
-import com.paascloud.base.constant.GlobalConstant;
 import com.paascloud.provider.service.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -47,7 +46,7 @@ public class RedisServiceImpl implements RedisService {
 
 		ValueOperations<String, String> ops = rt.opsForValue();
 		ops.set(key, value);
-		rt.expire(key, GlobalConstant.Sys.REDIS_DEFAULT_EXPIRE, TimeUnit.MINUTES);
+		//rt.expire(key, GlobalConstant.Sys.REDIS_DEFAULT_EXPIRE, TimeUnit.MINUTES);
 		log.info("setKey. [OK] key={}, value={}, expire=默认超时时间", key, value);
 
 

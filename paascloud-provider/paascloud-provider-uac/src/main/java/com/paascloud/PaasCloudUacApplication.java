@@ -11,8 +11,7 @@
 
 package com.paascloud;
 
-import com.paascloud.provider.service.impl.PcSmsCodeSender;
-import com.paascloud.security.core.validate.code.sms.SmsCodeSender;
+//import com.paascloud.security.core.validate.code.sms.SmsCodeSender;
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -46,16 +45,16 @@ public class PaasCloudUacApplication {
 		SpringApplication.run(PaasCloudUacApplication.class, args);
 	}
 
-	@Bean
-	public SpringLiquibase springLiquibase(DataSource dataSource) {
-
-		SpringLiquibase springLiquibase = new SpringLiquibase();
-
-		springLiquibase.setDataSource(dataSource);
-		springLiquibase.setChangeLog("classpath:/liquibase/index.xml");
-
-		return springLiquibase;
-	}
+//	@Bean
+//	public SpringLiquibase springLiquibase(DataSource dataSource) {
+//
+//		SpringLiquibase springLiquibase = new SpringLiquibase();
+//
+//		springLiquibase.setDataSource(dataSource);
+//		springLiquibase.setChangeLog("classpath:/liquibase/index.xml");
+//
+//		return springLiquibase;
+//	}
 
 	@Bean
 	public ReloadableResourceBundleMessageSource messageSource() {
@@ -64,8 +63,8 @@ public class PaasCloudUacApplication {
 		return messageSource;
 	}
 
-	@Bean
-	public SmsCodeSender smsCodeSender() {
-		return new PcSmsCodeSender();
-	}
+//	@Bean
+//	public SmsCodeSender smsCodeSender() {
+//		return new PcSmsCodeSender();
+//	}
 }

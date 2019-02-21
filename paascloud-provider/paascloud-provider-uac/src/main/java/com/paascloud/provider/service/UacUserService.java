@@ -12,14 +12,14 @@
 package com.paascloud.provider.service;
 
 import com.github.pagehelper.PageInfo;
-import com.paascloud.base.dto.LoginAuthDto;
+//import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.core.support.IService;
 import com.paascloud.provider.model.domain.UacLog;
 import com.paascloud.provider.model.domain.UacUser;
 import com.paascloud.provider.model.dto.menu.UserMenuDto;
 import com.paascloud.provider.model.dto.user.*;
 import com.paascloud.provider.model.vo.UserBindRoleVo;
-import com.paascloud.security.core.SecurityUser;
+//import com.paascloud.security.core.SecurityUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 
@@ -118,7 +118,7 @@ public interface UacUserService extends IService<UacUser> {
 	 * @param user         the user
 	 * @param loginAuthDto the login auth dto
 	 */
-	void saveUacUser(UacUser user, LoginAuthDto loginAuthDto);
+	//void saveUacUser(UacUser user, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 根据用户ID查询用户日志集合.
@@ -137,7 +137,7 @@ public interface UacUserService extends IService<UacUser> {
 	 *
 	 * @return the int
 	 */
-	int modifyUserStatusById(UacUser uacUser, LoginAuthDto loginAuthDto);
+	//int modifyUserStatusById(UacUser uacUser, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 绑定用户角色信息.
@@ -145,7 +145,7 @@ public interface UacUserService extends IService<UacUser> {
 	 * @param bindUserRolesDto the bind user roles dto
 	 * @param loginAuthDto     the login auth dto
 	 */
-	void bindUserRoles(BindUserRolesDto bindUserRolesDto, LoginAuthDto loginAuthDto);
+	//void bindUserRoles(BindUserRolesDto bindUserRolesDto, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 查询用户菜单.
@@ -154,7 +154,7 @@ public interface UacUserService extends IService<UacUser> {
 	 *
 	 * @return the list
 	 */
-	List<UserMenuDto> queryUserMenuDtoData(LoginAuthDto loginAuthDto);
+	//List<UserMenuDto> queryUserMenuDtoData(LoginAuthDto loginAuthDto);
 
 	/**
 	 * 用户绑定菜单.
@@ -164,7 +164,7 @@ public interface UacUserService extends IService<UacUser> {
 	 *
 	 * @return the int
 	 */
-	int bindUserMenus(List<Long> menuIdList, LoginAuthDto loginAuthDto);
+	//int bindUserMenus(List<Long> menuIdList, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 根据用户ID查询用户信息.
@@ -183,7 +183,7 @@ public interface UacUserService extends IService<UacUser> {
 	 *
 	 * @return the int
 	 */
-	int userModifyPwd(UserModifyPwdDto userModifyPwdDto, LoginAuthDto authResDto);
+	//int userModifyPwd(UserModifyPwdDto userModifyPwdDto, LoginAuthDto authResDto);
 
 	/**
 	 * 用户忘记密码
@@ -254,7 +254,7 @@ public interface UacUserService extends IService<UacUser> {
 	 * @param emailCode    the email code
 	 * @param loginAuthDto the login auth dto
 	 */
-	void modifyUserEmail(String email, String emailCode, LoginAuthDto loginAuthDto);
+	//void modifyUserEmail(String email, String emailCode, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 重置登录密码.
@@ -262,7 +262,7 @@ public interface UacUserService extends IService<UacUser> {
 	 * @param userId       the user id
 	 * @param loginAuthDto the login auth dto
 	 */
-	void resetLoginPwd(Long userId, LoginAuthDto loginAuthDto);
+	//void resetLoginPwd(Long userId, LoginAuthDto loginAuthDto);
 
 	/**
 	 * 重置登录密码.
@@ -303,7 +303,7 @@ public interface UacUserService extends IService<UacUser> {
 	 * @param principal the principal
 	 * @param request   the request
 	 */
-	void handlerLoginData(OAuth2AccessToken token, final SecurityUser principal, final HttpServletRequest request);
+	//void handlerLoginData(OAuth2AccessToken token, final SecurityUser principal, final HttpServletRequest request);
 
 	/**
 	 * Find user info by login name uac user.

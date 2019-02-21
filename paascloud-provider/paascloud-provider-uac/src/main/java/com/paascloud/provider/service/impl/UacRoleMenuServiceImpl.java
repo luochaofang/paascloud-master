@@ -1,6 +1,6 @@
 package com.paascloud.provider.service.impl;
 
-import com.paascloud.base.enums.ErrorCodeEnum;
+//import com.paascloud.base.enums.ErrorCodeEnum;
 import com.paascloud.core.support.BaseService;
 import com.paascloud.provider.mapper.UacRoleMenuMapper;
 import com.paascloud.provider.model.domain.UacRoleMenu;
@@ -36,7 +36,7 @@ public class UacRoleMenuServiceImpl extends BaseService<UacRoleMenu> implements 
 	@Override
 	public void deleteByRoleId(Long roleId) {
 		if (roleId == null) {
-			throw new UacBizException(ErrorCodeEnum.UAC10012001);
+			//throw new UacBizException(ErrorCodeEnum.UAC10012001);
 		}
 		UacRoleMenu roleMenu = new UacRoleMenu();
 		roleMenu.setRoleId(roleId);
@@ -47,7 +47,7 @@ public class UacRoleMenuServiceImpl extends BaseService<UacRoleMenu> implements 
 	@Transactional(readOnly = true, rollbackFor = Exception.class)
 	public List<UacRoleMenu> listByRoleId(Long roleId) {
 		if (roleId == null) {
-			throw new UacBizException(ErrorCodeEnum.UAC10012001);
+			//throw new UacBizException(ErrorCodeEnum.UAC10012001);
 		}
 		UacRoleMenu roleMenu = new UacRoleMenu();
 		roleMenu.setRoleId(roleId);
@@ -57,7 +57,7 @@ public class UacRoleMenuServiceImpl extends BaseService<UacRoleMenu> implements 
 	@Override
 	public void insert(Long roleId, Set<Long> menuIdList) {
 		if (roleId == null) {
-			throw new UacBizException(ErrorCodeEnum.UAC10012001);
+			//throw new UacBizException(ErrorCodeEnum.UAC10012001);
 		}
 		UacRoleMenu uacRoleMenu = new UacRoleMenu();
 		uacRoleMenu.setRoleId(roleId);
