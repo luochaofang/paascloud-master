@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>paascloud-common-base</artifactId>
-
+    <version>1.0</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -23,17 +23,4 @@
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <repository>
-            <id>corporate-lib-rep</id>
-            <url>http://nexus.foudre.cn/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>User Project Snapshot</name>
-            <url>http://nexus.foudre.cn/repository/maven-snapshots/</url>
-            <uniqueVersion>true</uniqueVersion>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

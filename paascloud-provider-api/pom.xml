@@ -21,6 +21,7 @@
     <dependency>
       <groupId>com.liuzm.paascloud.common</groupId>
       <artifactId>paascloud-common-base</artifactId>
+      <version>1.0</version>
     </dependency>
     <dependency>
       <groupId>com.liuzm.paascloud.common</groupId>

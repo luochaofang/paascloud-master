@@ -12,8 +12,6 @@
 package com.paascloud.core.support;
 
 import com.paascloud.base.exception.BusinessException;
-import com.paascloud.core.generator.IncrementIdGenerator;
-import com.paascloud.core.generator.UniqueIdGenerator;
 import org.apache.ibatis.session.RowBounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -271,6 +269,7 @@ public abstract class BaseService<T> implements IService<T> {
 	}
 
 	protected long generateId() {
-		return UniqueIdGenerator.getInstance(IncrementIdGenerator.getServiceId()).nextId();
+		return 1;
+		//return UniqueIdGenerator.getInstance(IncrementIdGenerator.getServiceId()).nextId();
 	}
 }

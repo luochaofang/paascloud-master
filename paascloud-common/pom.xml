@@ -34,11 +34,11 @@
 
     <distributionManagement>
         <repository>
-            <id>corporate-lib-rep</id>
+            <id>releases</id>
             <url>http://nexus.foudre.cn/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus-snapshots</id>
+            <id>snapshots</id>
             <name>User Project Snapshot</name>
             <url>http://nexus.foudre.cn/repository/maven-snapshots/</url>
             <uniqueVersion>true</uniqueVersion>

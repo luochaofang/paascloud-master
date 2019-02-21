@@ -17,8 +17,6 @@ import com.paascloud.base.constant.GlobalConstant;
 import com.paascloud.base.dto.LoginAuthDto;
 import com.paascloud.base.enums.ErrorCodeEnum;
 import com.paascloud.base.exception.BusinessException;
-import com.paascloud.core.generator.IncrementIdGenerator;
-import com.paascloud.core.generator.UniqueIdGenerator;
 import com.paascloud.wrapper.WrapMapper;
 import com.paascloud.wrapper.Wrapper;
 import org.slf4j.Logger;
@@ -96,7 +94,8 @@ public class BaseController {
 	}
 
 	protected long generateId() {
-		return UniqueIdGenerator.getInstance(IncrementIdGenerator.getServiceId()).nextId();
+		return 1;
+		//return UniqueIdGenerator.getInstance(IncrementIdGenerator.getServiceId()).nextId();
 	}
 
 }

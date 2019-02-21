@@ -12,7 +12,6 @@
 package com.paascloud.core.config;
 
 import com.paascloud.config.properties.PaascloudProperties;
-import com.paascloud.core.registry.RegistryCenterFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -47,7 +46,7 @@ public class ZookeeperInitRunner implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		String hostAddress = InetAddress.getLocalHost().getHostAddress();
 		log.info("###ZookeeperInitRunner，init. HostAddress={}, applicationName={}", hostAddress, applicationName);
-		RegistryCenterFactory.startup(paascloudProperties, hostAddress, applicationName);
+		//RegistryCenterFactory.startup(paascloudProperties, hostAddress, applicationName);
 		log.info("###ZookeeperInitRunner，finish<<<<<<<<<<<<<");
 	}
 
